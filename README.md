@@ -24,6 +24,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## License
+
+The software in this repository is licensed under the [MIT License](./LICENSE).
+
+The Climate Justice Counsel name, logo, and related branding are not licensed for reuse under the MIT License and remain the property of Climate Justice Counsel.
+
 ## Learn More
 
 To learn more, take a look at the following resources:

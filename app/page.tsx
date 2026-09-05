@@ -1,5 +1,5 @@
-import { StarterPage } from '@/components/starter-page'
+import { ClimateLabHome } from '@/components/climate-lab-home'
 
 export default function Home() {
-  return <StarterPage />
+  return <ClimateLabHome />
 }

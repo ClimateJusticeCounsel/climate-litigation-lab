@@ -3,9 +3,9 @@ import './globals.css'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'Fluent UI Starter',
+  title: 'Climate Litigation Lab | Climate Justice Counsel',
   description:
-    'A starter app built with Microsoft Fluent UI React v9 (Fluent 2 design system).',
+    'An open research platform for the cases, evidence, and institutions shaping climate accountability.',
 }
 
 export default function RootLayout({

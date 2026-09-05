@@ -16,5 +16,5 @@ export default async function EventPage({ params }: EventPageProps) {
 }
 
 function Meta({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) { return <div className="flex gap-3"><span className="text-primary">{icon}</span><div><p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{label}</p><p className="mt-2 text-sm">{value}</p></div></div> }
-function Speaker({ name, role }: { name: string; role: string }) { return <div className="grid gap-2 py-5 sm:grid-cols-[1fr_1fr]"><span className="font-serif text-2xl">{name}</span><span className="text-sm text-muted-foreground sm:text-right">{role}</span></div> }
+function Speaker({ name: _name, role: _role }: { name: string; role: string }) { return <div className="py-5"><span className="font-serif text-2xl">Speakers to be delivered</span><p className="mt-2 text-sm text-muted-foreground">The speaker list will be announced in the event programme.</p></div> }
 function Row({ time, title }: { time: string; title: string }) { return <div className="grid gap-3 py-5 sm:grid-cols-[0.25fr_1fr]"><span className="text-sm text-primary">{time}</span><span className="font-serif text-2xl">{title}</span></div> }

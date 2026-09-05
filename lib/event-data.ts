@@ -4,7 +4,7 @@ export const eventData = [
     number: '01',
     date: '18 DEC 2026',
     location: 'Seoul National University · Seoul',
-    title: 'Climate Litigation and the Architecture of Accountability',
+    title: 'Climate Responsibility, Energy Law, and the Role of Korean Courts',
     description:
       'A comparative workshop on how courts, communities, and public institutions are reshaping climate responsibility across jurisdictions.',
     tag: 'Upcoming workshop',

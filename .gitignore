@@ -4,12 +4,27 @@ __v0_devtools.tsx
 __v0_jsx-dev-runtime.ts
 .snowflake/
 .v0-trash/
-.vercel/
 
 # Environment variables
-.env*.local
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel/
+
+# Sensitive/local material
+private/
+data/private/
+uploads/private/
+
+# Credentials
+*.pem
+*.key
+*.p12
+*.pfx
 
 # Common ignores
-node_modules
+node_modules/
 .next/
 .DS_Store

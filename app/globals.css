@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -44,14 +45,14 @@
 }
 
 :root {
-  --radius: 0.35rem;
-  --background: oklch(0.975 0.012 84);
-  --foreground: oklch(0.235 0.012 70);
-  --card: oklch(0.99 0.008 84);
-  --card-foreground: oklch(0.235 0.012 70);
-  --popover: oklch(0.99 0.008 84);
-  --popover-foreground: oklch(0.235 0.012 70);
-  --primary: oklch(0.59 0.09 77);
+  --radius: 0.18rem;
+  --background: oklch(0.965 0.018 84);
+  --foreground: oklch(0.20 0.018 72);
+  --card: oklch(0.98 0.012 84);
+  --card-foreground: oklch(0.20 0.018 72);
+  --popover: oklch(0.98 0.012 84);
+  --popover-foreground: oklch(0.20 0.018 72);
+  --primary: oklch(0.61 0.10 76);
   --primary-foreground: oklch(0.99 0.008 84);
   --secondary: oklch(0.935 0.015 82);
   --secondary-foreground: oklch(0.27 0.015 70);
@@ -125,6 +126,17 @@
   body {
     @apply bg-background text-foreground;
     margin: 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: 400;
+  }
+
+  ::selection {
+    background: oklch(0.72 0.10 78);
+    color: oklch(0.20 0.018 72);
   }
 
   button:not(:disabled),

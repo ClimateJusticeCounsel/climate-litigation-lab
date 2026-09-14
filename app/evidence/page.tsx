@@ -16,6 +16,7 @@ import {
   Search,
   ShieldCheck,
 } from 'lucide-react'
+import { LocalFileFingerprint } from '@/components/local-file-fingerprint'
 import { evidenceDemo, evidenceIssues, type EvidenceItem } from '@/lib/evidence-demo'
 
 const relationLabel = {
@@ -82,6 +83,8 @@ export default function EvidenceWorkspaceDemo() {
             <Stat label="Public" value={String(evidenceDemo.filter((e) => e.status === 'public-source').length)} />
           </div>
         </div>
+
+        <LocalFileFingerprint />
 
         <div className="mt-7 grid gap-3 md:grid-cols-[1fr_auto_auto]">
           <label className="flex items-center gap-3 border border-border px-4 py-3">

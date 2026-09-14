@@ -5,11 +5,9 @@ import Link from 'next/link'
 import { eventData } from '@/lib/event-data'
 import {
   ArrowUpRight,
-  BookOpen,
   Compass,
   FlaskConical,
   Globe2,
-  Layers3,
   Menu,
   Search,
   X,
@@ -33,7 +31,6 @@ export function ClimateLabHome() {
           </Link>
           <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground md:flex">
             <a href="#events" className="transition-colors hover:text-foreground">Events</a>
-            <a href="#research" className="transition-colors hover:text-foreground">Research</a>
             <Link href="/evidence" className="transition-colors hover:text-foreground">Evidence Workspace</Link>
             <a href="#about" className="transition-colors hover:text-foreground">About</a>
             <button onClick={() => setSearchOpen(true)} className="inline-flex items-center gap-2 transition-colors hover:text-foreground" aria-label="Open site search">
@@ -85,13 +82,22 @@ export function ClimateLabHome() {
         </div>
       </section>
 
-      <section id="research" className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
-        <div className="mb-14 flex items-end justify-between border-b border-border pb-6"><div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">03 / In development</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Research tools</h2></div><Layers3 className="hidden size-8 text-primary md:block" strokeWidth={1} /></div>
-        <div className="grid border-l border-t border-border md:grid-cols-3">
-          <div className="group min-h-72 border-b border-r border-border p-7 transition-colors hover:bg-secondary/50"><span className="text-[10px] tracking-[0.18em] text-primary">01</span><BookOpen className="mt-16 size-6 text-muted-foreground transition-colors group-hover:text-primary" strokeWidth={1.25} /><h3 className="mt-6 font-serif text-3xl">Case atlas</h3><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">A living index of climate cases, claims, remedies, and outcomes across jurisdictions.</p></div>
-          <Link href="/evidence" className="group min-h-72 border-b border-r border-border p-7 transition-colors hover:bg-secondary/50"><span className="text-[10px] tracking-[0.18em] text-primary">02 · Prototype live</span><FlaskConical className="mt-16 size-6 text-primary" strokeWidth={1.25} /><h3 className="mt-6 font-serif text-3xl">Evidence workspace</h3><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">Explore a synthetic case showing how interviews, records, scientific sources, contradictions, and evidence gaps connect to developing legal issues.</p><span className="mt-7 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">Open prototype <ArrowUpRight className="size-3.5" /></span></Link>
-          <div className="group min-h-72 border-b border-r border-border p-7 transition-colors hover:bg-secondary/50"><span className="text-[10px] tracking-[0.18em] text-primary">03</span><BookOpen className="mt-16 size-6 text-muted-foreground transition-colors group-hover:text-primary" strokeWidth={1.25} /><h3 className="mt-6 font-serif text-3xl">Jurisdiction map</h3><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">A visual way to follow how climate law travels between courts, places, and institutions.</p></div>
+      <section id="workspace" className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
+        <div className="mb-14 flex flex-col justify-between gap-5 border-b border-border pb-6 md:flex-row md:items-end">
+          <div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">03 / Working prototype</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Evidence Workspace</h2></div>
+          <p className="max-w-sm text-sm leading-6 text-muted-foreground">The Lab's first working tool connects private field records and public sources to the legal issues they may support, challenge, or leave unresolved.</p>
         </div>
+        <Link href="/evidence" className="group grid min-h-80 border border-border p-7 transition-colors hover:border-primary hover:bg-secondary/40 md:grid-cols-[0.7fr_1.3fr] md:items-end lg:p-10">
+          <div>
+            <span className="text-[10px] uppercase tracking-[0.18em] text-primary">Prototype live</span>
+            <FlaskConical className="mt-12 size-8 text-primary" strokeWidth={1.25} />
+          </div>
+          <div className="mt-12 md:mt-0">
+            <h3 className="font-serif text-4xl tracking-[-0.03em] md:text-5xl">Build the evidentiary record alongside the case.</h3>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">Explore demo private interviews, property records, expert materials, and public scientific sources. Filter them by legal issue and see where each item supports the developing case, creates tension, or reveals an evidence gap.</p>
+            <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">Open Evidence Workspace <ArrowUpRight className="size-3.5" /></span>
+          </div>
+        </Link>
       </section>
 
       <section className="mx-auto max-w-[1440px] px-6 pb-24 lg:px-10"><div className="mb-10 flex items-end justify-between border-b border-border pb-6"><div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">04 / Archive</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Past events</h2></div></div><div className="border border-border px-6 py-10"><p className="max-w-xl text-sm leading-7 text-muted-foreground">No archived events yet. Completed Climate Litigation Lab sessions will appear here as their public case pages and materials are released.</p></div></section>

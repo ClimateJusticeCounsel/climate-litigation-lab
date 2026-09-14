@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -11,7 +12,6 @@ import {
   FileSearch,
   Filter,
   FlaskConical,
-  Gavel,
   Link2,
   Search,
   ShieldCheck,
@@ -29,7 +29,7 @@ const relationLabel = {
 export default function EvidenceWorkspaceDemo() {
   const [query, setQuery] = useState('')
   const [issue, setIssue] = useState('All issues')
-  const [status, setStatus] = useState<'all' | 'synthetic' | 'public-source'>('all')
+  const [status, setStatus] = useState<'all' | 'private' | 'public-source'>('all')
   const [selectedId, setSelectedId] = useState(evidenceDemo[0]?.id ?? '')
 
   const filtered = useMemo(() => {
@@ -54,10 +54,15 @@ export default function EvidenceWorkspaceDemo() {
     <main className="min-h-screen bg-background text-foreground">
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 lg:px-10">
-          <Link href="/" className="flex items-center gap-3">
-            <span className="flex size-9 items-center justify-center border border-foreground/70 text-primary">
-              <Gavel className="size-4" strokeWidth={1.5} />
-            </span>
+          <Link href="/" className="flex items-center gap-3" aria-label="Climate Litigation Lab home">
+            <Image
+              src="/climate-justice-counsel-emblem.png"
+              alt="Climate Justice Counsel emblem"
+              width={64}
+              height={64}
+              className="size-14 shrink-0 object-contain"
+              priority
+            />
             <span className="font-serif text-lg">Climate Litigation Lab</span>
           </Link>
           <Link href="/" className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground">
@@ -70,11 +75,11 @@ export default function EvidenceWorkspaceDemo() {
         <div className="flex flex-col gap-7 border-b border-border pb-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <div className="mb-4 flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-primary">
-              <FlaskConical className="size-3.5" /> Prototype / synthetic case
+              <FlaskConical className="size-3.5" /> Prototype / demo case
             </div>
             <h1 className="font-serif text-5xl tracking-[-0.04em] md:text-7xl">Evidence Workspace</h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              A public prototype showing how field evidence, public sources, and developing legal issues can be linked. Synthetic records are clearly marked and contain no real claimant information.
+              A public prototype showing how private field evidence, public sources, and developing legal issues can be linked. Demo records contain no real claimant information.
             </p>
           </div>
           <div className="grid min-w-[300px] grid-cols-3 border border-border text-center text-xs">
@@ -104,14 +109,14 @@ export default function EvidenceWorkspaceDemo() {
             </select>
           </label>
           <div className="flex border border-border p-1 text-xs">
-            {(['all', 'synthetic', 'public-source'] as const).map((value) => (
+            {(['all', 'private', 'public-source'] as const).map((value) => (
               <button
                 key={value}
                 type="button"
                 onClick={() => setStatus(value)}
                 className={`px-3 py-2 ${status === value ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground'}`}
               >
-                {value === 'all' ? 'All' : value === 'synthetic' ? 'Synthetic' : 'Public'}
+                {value === 'all' ? 'All' : value === 'private' ? 'Private' : 'Public'}
               </button>
             ))}
           </div>
@@ -247,8 +252,8 @@ function DetailCell({ label, value }: { label: string; value: string }) {
 function StatusPill({ status }: { status: EvidenceItem['status'] }) {
   return (
     <span className="inline-flex items-center gap-1 border border-border px-2 py-1 text-[9px] uppercase tracking-[0.12em] text-muted-foreground">
-      {status === 'synthetic' ? <FlaskConical className="size-3" /> : <CheckCircle2 className="size-3" />}
-      {status === 'synthetic' ? 'Synthetic' : 'Public source'}
+      {status === 'private' ? <FlaskConical className="size-3" /> : <CheckCircle2 className="size-3" />}
+      {status === 'private' ? 'Demo' : 'Public source'}
     </span>
   )
 }

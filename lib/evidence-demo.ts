@@ -8,7 +8,7 @@ export type EvidenceItem = {
   id: string
   title: string
   kind: 'interview' | 'photo' | 'property' | 'local-law' | 'science' | 'expert' | 'damages' | 'map'
-  status: 'synthetic' | 'public-source'
+  status: 'private' | 'public-source'
   date: string
   location?: string
   sourceLabel: string
@@ -33,12 +33,12 @@ export const evidenceDemo: EvidenceItem[] = [
     id: 'EV-001',
     title: 'Resident interview — shoreline retreat and customary use',
     kind: 'interview',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-02-14',
     location: 'Demo coastal community, Fiji',
-    sourceLabel: 'Synthetic field interview for prototype',
+    sourceLabel: 'Demo field interview for prototype',
     summary:
-      'A resident describes a family home site, fishing access, burial grounds, and repeated inundation affecting how the land is used. The record is intentionally fictional and exists only to demonstrate source-linked field evidence.',
+      'A demo resident interview describes a family home site, fishing access, burial grounds, and repeated inundation affecting how the land is used. It contains no real claimant information.',
     locator: 'Transcript 00:11:40–00:16:05',
     hash: '9f2de5c9d3aa6df9e6e452f11a2a43a4c227a1b50f7eaa906a2bb34a22b846d1',
     relations: [
@@ -58,18 +58,18 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'Narrative identifies non-economic loss but does not quantify it.',
       },
     ],
-    tags: ['field', 'testimony', 'customary use', 'inundation'],
+    tags: ['field', 'testimony', 'customary use', 'inundation', 'demo'],
   },
   {
     id: 'EV-002',
     title: 'Shoreline condition photo set',
     kind: 'photo',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-02-14',
     location: 'Demo coastal community, Fiji',
-    sourceLabel: 'Synthetic photo record for prototype',
+    sourceLabel: 'Demo photo record for prototype',
     summary:
-      'A mock photo set records erosion markers, a damaged seawall, and the distance between the current shoreline and a mapped former boundary.',
+      'A demo photo set records erosion markers, a damaged seawall, and the distance between the current shoreline and a mapped former boundary.',
     locator: 'Images 02, 05, 07',
     hash: '62fa4e82c94f29c4f873f1650875932192150851ec3b6b1e4bc47d902afcf37d',
     relations: [
@@ -84,18 +84,18 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'A photograph documents condition, not the climatic cause of that condition.',
       },
     ],
-    tags: ['field', 'photo', 'erosion', 'property'],
+    tags: ['field', 'photo', 'erosion', 'property', 'demo'],
   },
   {
     id: 'EV-003',
     title: 'Parcel and occupancy record',
     kind: 'property',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-02-16',
     location: 'Demo coastal community, Fiji',
-    sourceLabel: 'Synthetic property record for prototype',
+    sourceLabel: 'Demo property record for prototype',
     summary:
-      'A fictional parcel record used to demonstrate how title, occupancy, customary interests, and mapped boundaries can be stored alongside other evidence.',
+      'A demo parcel record shows how title, occupancy, customary interests, and mapped boundaries can be stored alongside other evidence.',
     locator: 'Parcel sheet, fields 3–9',
     hash: '1766a8513071a5599d671bb0df3425b2e21c077687338f0c2de3bfc679dd295d',
     relations: [
@@ -110,17 +110,17 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'Shows why formal parcel records may need to be read together with customary-law evidence.',
       },
     ],
-    tags: ['property', 'tenure', 'standing'],
+    tags: ['property', 'tenure', 'standing', 'demo'],
   },
   {
     id: 'EV-004',
     title: 'Local/customary law proof memo',
     kind: 'local-law',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-02-20',
-    sourceLabel: 'Synthetic legal proof memo for prototype',
+    sourceLabel: 'Demo legal proof memo for prototype',
     summary:
-      'A mock memorandum separates three questions: what the local rule is, how that rule is recognized by the domestic legal system, and what evidence is needed to establish that the claimant holds the asserted right.',
+      'A demo memorandum separates three questions: what the local rule is, how that rule is recognized by the domestic legal system, and what evidence is needed to establish that the claimant holds the asserted right.',
     locator: 'Sections 2.1–2.4',
     hash: '823830c57298025150376611966026fce7255413e6edac4f356bc00f66564f41',
     relations: [
@@ -135,7 +135,7 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'Connects the asserted customary interest to the legal test that a foreign forum may need to determine.',
       },
     ],
-    tags: ['local law', 'customary law', 'proof'],
+    tags: ['local law', 'customary law', 'proof', 'demo'],
   },
   {
     id: 'EV-005',
@@ -194,12 +194,12 @@ export const evidenceDemo: EvidenceItem[] = [
     id: 'EV-007',
     title: 'Coastal engineer site assessment',
     kind: 'expert',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-03-04',
     location: 'Demo coastal community, Fiji',
-    sourceLabel: 'Synthetic expert report for prototype',
+    sourceLabel: 'Demo expert report for prototype',
     summary:
-      'A fictional engineering report compares historical shoreline positions, drainage, wave exposure, local interventions, and present damage to illustrate how expert evidence can both support and qualify a causal theory.',
+      'A demo engineering report compares historical shoreline positions, drainage, wave exposure, local interventions, and present damage to illustrate how expert evidence can both support and qualify a causal theory.',
     locator: 'Report pp. 18–31',
     hash: 'a0480a945bd6e746f6cd776fd82c32f95919b214314830df48d31bb39ab171cc',
     relations: [
@@ -214,18 +214,18 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'Also identifies drainage, shoreline engineering, and sediment change as contributing local factors.',
       },
     ],
-    tags: ['expert', 'engineering', 'causation', 'contrary evidence'],
+    tags: ['expert', 'engineering', 'causation', 'contrary evidence', 'demo'],
   },
   {
     id: 'EV-008',
     title: 'Household loss and relocation worksheet',
     kind: 'damages',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-03-07',
     location: 'Demo coastal community, Fiji',
-    sourceLabel: 'Synthetic damages worksheet for prototype',
+    sourceLabel: 'Demo damages worksheet for prototype',
     summary:
-      'A fictional worksheet separates repair costs, relocation expense, loss of use, lost income, and non-economic/cultural loss so that different valuation theories can be tested against the available proof.',
+      'A demo worksheet separates repair costs, relocation expense, loss of use, lost income, and non-economic/cultural loss so that different valuation theories can be tested against the available proof.',
     locator: 'Worksheet tabs A–E',
     hash: '2f612ca33d508b43e1243889376e96e1be8ec98fb57866aa52aad4aa31d52178',
     relations: [
@@ -240,18 +240,18 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'Cultural and customary loss still requires an accepted methodology and corroborating evidence.',
       },
     ],
-    tags: ['damages', 'valuation', 'relocation'],
+    tags: ['damages', 'valuation', 'relocation', 'demo'],
   },
   {
     id: 'EV-009',
     title: 'Community sketch map and use areas',
     kind: 'map',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-02-15',
     location: 'Demo coastal community, Fiji',
-    sourceLabel: 'Synthetic participatory map for prototype',
+    sourceLabel: 'Demo participatory map for prototype',
     summary:
-      'A mock participatory map identifies homes, fishing access, gathering areas, burial grounds, and locations residents describe as periodically inundated.',
+      'A demo participatory map identifies homes, fishing access, gathering areas, burial grounds, and locations residents describe as periodically inundated.',
     locator: 'Map layers 1–5',
     hash: '80cb288ad2900f9278455b371bf15bec8ceded936fdac6151e4890b5a967c8c3',
     relations: [
@@ -266,17 +266,17 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'Connects testimony about impact to identifiable places.',
       },
     ],
-    tags: ['map', 'field', 'customary use', 'spatial evidence'],
+    tags: ['map', 'field', 'customary use', 'spatial evidence', 'demo'],
   },
   {
     id: 'EV-010',
     title: 'Missing evidence request — site-specific attribution',
     kind: 'expert',
-    status: 'synthetic',
+    status: 'private',
     date: '2027-03-10',
-    sourceLabel: 'System-generated prototype gap record',
+    sourceLabel: 'Demo system-generated gap record',
     summary:
-      'A mock gap item showing how CJC Lab can turn a weakness in the developing argument into a concrete field or expert-research request.',
+      'A demo gap item showing how CJC Lab can turn a weakness in the developing argument into a concrete field or expert-research request.',
     locator: 'Gap record GAP-03',
     relations: [
       {
@@ -285,6 +285,6 @@ export const evidenceDemo: EvidenceItem[] = [
         note: 'Obtain analysis connecting observed parcel-level flooding/erosion to sea-level rise and separating local non-climate drivers.',
       },
     ],
-    tags: ['gap', 'field request', 'causation'],
+    tags: ['gap', 'field request', 'causation', 'demo'],
   },
 ]

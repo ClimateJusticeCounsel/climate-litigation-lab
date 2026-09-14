@@ -7,6 +7,7 @@ import {
   ArrowUpRight,
   BookOpen,
   Compass,
+  FlaskConical,
   Globe2,
   Layers3,
   Menu,
@@ -18,12 +19,6 @@ import { useState } from 'react'
 function PlainButton({ children, onClick, label }: { children: React.ReactNode; onClick?: () => void; label?: string }) {
   return <button type="button" onClick={onClick} aria-label={label} className="inline-flex items-center justify-center border border-transparent px-3 py-2 text-sm transition-colors hover:bg-foreground/5">{children}</button>
 }
-
-const pastEvents = [
-  ['2026', 'The Climate Casebook: Evidence, Expertise, and the Courtroom', 'London · online'],
-  ['2025', 'Public Law in a Warming World', 'The Hague'],
-  ['2025', 'Litigating the Transition', 'New York · online'],
-]
 
 export function ClimateLabHome() {
   const [searchOpen, setSearchOpen] = useState(false)
@@ -39,6 +34,7 @@ export function ClimateLabHome() {
           <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground md:flex">
             <a href="#events" className="transition-colors hover:text-foreground">Events</a>
             <a href="#research" className="transition-colors hover:text-foreground">Research</a>
+            <Link href="/evidence" className="transition-colors hover:text-foreground">Evidence Workspace</Link>
             <a href="#about" className="transition-colors hover:text-foreground">About</a>
             <button onClick={() => setSearchOpen(true)} className="inline-flex items-center gap-2 transition-colors hover:text-foreground" aria-label="Open site search">
               <Search className="size-3.5" /> Search
@@ -92,11 +88,13 @@ export function ClimateLabHome() {
       <section id="research" className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
         <div className="mb-14 flex items-end justify-between border-b border-border pb-6"><div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">03 / In development</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Research tools</h2></div><Layers3 className="hidden size-8 text-primary md:block" strokeWidth={1} /></div>
         <div className="grid border-l border-t border-border md:grid-cols-3">
-          {[['Case atlas', 'A living index of climate cases, claims, remedies, and outcomes across jurisdictions.'], ['Evidence room', 'A structured archive for expert knowledge, scientific findings, and public records.'], ['Jurisdiction map', 'A visual way to follow how climate law travels between courts, places, and institutions.']].map(([title, description], index) => <div key={title} className="group min-h-72 border-b border-r border-border p-7 transition-colors hover:bg-secondary/50"><span className="text-[10px] tracking-[0.18em] text-primary">0{index + 1}</span><BookOpen className="mt-16 size-6 text-muted-foreground transition-colors group-hover:text-primary" strokeWidth={1.25} /><h3 className="mt-6 font-serif text-3xl">{title}</h3><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">{description}</p></div>)}
+          <div className="group min-h-72 border-b border-r border-border p-7 transition-colors hover:bg-secondary/50"><span className="text-[10px] tracking-[0.18em] text-primary">01</span><BookOpen className="mt-16 size-6 text-muted-foreground transition-colors group-hover:text-primary" strokeWidth={1.25} /><h3 className="mt-6 font-serif text-3xl">Case atlas</h3><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">A living index of climate cases, claims, remedies, and outcomes across jurisdictions.</p></div>
+          <Link href="/evidence" className="group min-h-72 border-b border-r border-border p-7 transition-colors hover:bg-secondary/50"><span className="text-[10px] tracking-[0.18em] text-primary">02 · Prototype live</span><FlaskConical className="mt-16 size-6 text-primary" strokeWidth={1.25} /><h3 className="mt-6 font-serif text-3xl">Evidence workspace</h3><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">Explore a synthetic case showing how interviews, records, scientific sources, contradictions, and evidence gaps connect to developing legal issues.</p><span className="mt-7 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">Open prototype <ArrowUpRight className="size-3.5" /></span></Link>
+          <div className="group min-h-72 border-b border-r border-border p-7 transition-colors hover:bg-secondary/50"><span className="text-[10px] tracking-[0.18em] text-primary">03</span><BookOpen className="mt-16 size-6 text-muted-foreground transition-colors group-hover:text-primary" strokeWidth={1.25} /><h3 className="mt-6 font-serif text-3xl">Jurisdiction map</h3><p className="mt-3 max-w-xs text-sm leading-6 text-muted-foreground">A visual way to follow how climate law travels between courts, places, and institutions.</p></div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1440px] px-6 pb-24 lg:px-10"><div className="mb-10 flex items-end justify-between border-b border-border pb-6"><div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">04 / Archive</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Past events</h2></div></div><div>{pastEvents.map(([year, title, place]) => <div key={title} className="grid gap-3 border-b border-border py-5 text-sm md:grid-cols-[0.2fr_1fr_0.4fr] md:items-center"><span className="text-primary">{year}</span><span className="font-serif text-2xl">{title}</span><span className="text-muted-foreground md:text-right">{place}</span></div>)}</div></section>
+      <section className="mx-auto max-w-[1440px] px-6 pb-24 lg:px-10"><div className="mb-10 flex items-end justify-between border-b border-border pb-6"><div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">04 / Archive</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Past events</h2></div></div><div className="border border-border px-6 py-10"><p className="max-w-xl text-sm leading-7 text-muted-foreground">No archived events yet. Completed Climate Litigation Lab sessions will appear here as their public case pages and materials are released.</p></div></section>
 
       <footer className="border-t border-border bg-foreground text-background"><div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-6 py-12 lg:flex-row lg:items-end lg:justify-between lg:px-10"><div><div className="flex items-center gap-3"><Image src="/climate-justice-counsel-emblem.png" alt="Climate Justice Counsel emblem" width={56} height={56} className="size-12 shrink-0 object-contain" /><span className="font-serif text-xl">Climate Litigation Lab</span></div><p className="mt-5 max-w-sm text-sm leading-6 text-background/60">An open research platform by Climate Justice Counsel.</p></div><div className="flex flex-wrap gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.18em] text-background/60"><a href="https://climatejusticecounsel.org" target="_blank" rel="noreferrer" className="hover:text-background">Climate Justice Counsel</a><a href="mailto:lab@climatejusticecounsel.org" className="hover:text-background">Contact</a><span>© 2026</span></div></div></footer>
 
@@ -105,7 +103,6 @@ export function ClimateLabHome() {
   )
 }
 
-function EventCard({ event }: { event: (typeof upcomingEvents)[number] }) {
+function EventCard({ event }: { event: (typeof eventData)[number] }) {
   return <Link href={`/events/${event.slug}`} className="group block border border-border p-7 transition-colors hover:border-primary hover:bg-secondary/40"><div className="flex items-start justify-between"><span className="text-[10px] uppercase tracking-[0.2em] text-primary">{event.number} · {event.tag}</span><ArrowUpRight className="size-5 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" /></div><div className="mt-20 grid gap-8 md:grid-cols-[0.35fr_1fr]"><div><p className="font-serif text-2xl">{event.date}</p><p className="mt-2 text-xs leading-5 text-muted-foreground">{event.location}</p></div><div><h3 className="max-w-xl font-serif text-3xl leading-tight md:text-4xl">{event.title}</h3><p className="mt-5 max-w-lg text-sm leading-6 text-muted-foreground">{event.description}</p><span className="mt-7 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">View event <ArrowUpRight className="size-3.5" /></span></div></div></Link>
 }
-

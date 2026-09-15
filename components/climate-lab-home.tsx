@@ -9,6 +9,7 @@ import {
   FlaskConical,
   Globe2,
   Menu,
+  Newspaper,
   Search,
   X,
 } from 'lucide-react'
@@ -84,20 +85,35 @@ export function ClimateLabHome() {
 
       <section id="workspace" className="mx-auto max-w-[1440px] px-6 py-24 lg:px-10 lg:py-32">
         <div className="mb-14 flex flex-col justify-between gap-5 border-b border-border pb-6 md:flex-row md:items-end">
-          <div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">03 / Working prototype</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Evidence Workspace</h2></div>
-          <p className="max-w-sm text-sm leading-6 text-muted-foreground">The Lab's first working tool connects private field records and public sources to the legal issues they may support, challenge, or leave unresolved.</p>
+          <div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">03 / In development</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Lab tools</h2></div>
+          <p className="max-w-sm text-sm leading-6 text-muted-foreground">Tools for building cases from evidence and interpreting the legal developments that may shape them.</p>
         </div>
-        <Link href="/evidence" className="group grid min-h-80 border border-border p-7 transition-colors hover:border-primary hover:bg-secondary/40 md:grid-cols-[0.7fr_1.3fr] md:items-end lg:p-10">
-          <div>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-primary">Prototype live</span>
-            <FlaskConical className="mt-12 size-8 text-primary" strokeWidth={1.25} />
+
+        <div className="grid gap-5 lg:grid-cols-2">
+          <Link href="/evidence" className="group flex min-h-[360px] flex-col justify-between border border-border p-7 transition-colors hover:border-primary hover:bg-secondary/40 lg:p-10">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-primary">01 · Prototype live</span>
+              <FlaskConical className="mt-12 size-8 text-primary" strokeWidth={1.25} />
+            </div>
+            <div className="mt-14">
+              <h3 className="font-serif text-4xl tracking-[-0.03em] md:text-5xl">Evidence Workspace</h3>
+              <p className="mt-5 max-w-xl text-sm leading-7 text-muted-foreground">Build the evidentiary record alongside the case. Explore demo private records and public sources, then see where each item supports an issue, creates tension, or reveals an evidence gap.</p>
+              <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">Open Evidence Workspace <ArrowUpRight className="size-3.5" /></span>
+            </div>
+          </Link>
+
+          <div className="flex min-h-[360px] flex-col justify-between border border-border p-7 lg:p-10">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-primary">02 · In development</span>
+              <Newspaper className="mt-12 size-8 text-primary" strokeWidth={1.25} />
+            </div>
+            <div className="mt-14">
+              <h3 className="font-serif text-4xl tracking-[-0.03em] md:text-5xl">News</h3>
+              <p className="mt-5 max-w-xl text-sm leading-7 text-muted-foreground">Recent climate cases and legal developments, with concise summaries and Climate Justice Counsel's analysis of what they mean. Rather than duplicating a case database, each entry will add our perspective on the reasoning, implications, and questions the development raises.</p>
+              <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Case notes · Analysis · Opinion</span>
+            </div>
           </div>
-          <div className="mt-12 md:mt-0">
-            <h3 className="font-serif text-4xl tracking-[-0.03em] md:text-5xl">Build the evidentiary record alongside the case.</h3>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">Explore demo private interviews, property records, expert materials, and public scientific sources. Filter them by legal issue and see where each item supports the developing case, creates tension, or reveals an evidence gap.</p>
-            <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">Open Evidence Workspace <ArrowUpRight className="size-3.5" /></span>
-          </div>
-        </Link>
+        </div>
       </section>
 
       <section className="mx-auto max-w-[1440px] px-6 pb-24 lg:px-10"><div className="mb-10 flex items-end justify-between border-b border-border pb-6"><div><p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-primary">04 / Archive</p><h2 className="font-serif text-5xl tracking-[-0.04em] md:text-6xl">Past events</h2></div></div><div className="border border-border px-6 py-10"><p className="max-w-xl text-sm leading-7 text-muted-foreground">No archived events yet. Completed Climate Litigation Lab sessions will appear here as their public case pages and materials are released.</p></div></section>

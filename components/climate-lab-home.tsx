@@ -33,7 +33,7 @@ export function ClimateLabHome() {
           <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground md:flex">
             <a href="#events" className="transition-colors hover:text-foreground">Events</a>
             <Link href="/evidence" className="transition-colors hover:text-foreground">Evidence Workspace</Link>
-            <a href="#about" className="transition-colors hover:text-foreground">About</a>
+            <a href="#workspace" className="transition-colors hover:text-foreground">News</a>
             <button onClick={() => setSearchOpen(true)} className="inline-flex items-center gap-2 transition-colors hover:text-foreground" aria-label="Open site search">
               <Search className="size-3.5" /> Search
             </button>
@@ -60,8 +60,8 @@ export function ClimateLabHome() {
               <p className="mt-6 text-sm leading-6 text-muted-foreground">The Lab convenes scholars, advocates, and communities around the cases and questions that are defining climate accountability.</p>
             </div>
           </div>
-          <div className="flex items-end justify-between border-t border-foreground/20 pt-5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span>Research · Events · Evidence</span><span>Scroll to explore ↓</span>
+          <div className="border-t border-foreground/20 pt-5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <span>Research · Events · Evidence</span>
           </div>
         </div>
       </section>

@@ -13,7 +13,7 @@ function formatEventDate(value?: string) {
 }
 
 export default async function Home() {
-  let events = eventData.map((event) => ({ ...event }))
+  let events: Array<{ slug: string; number: string; date: string; location: string; title: string; description: string; tag: string }> = eventData.map((event) => ({ ...event }))
 
   try {
     const published = await getPublishedEvents()

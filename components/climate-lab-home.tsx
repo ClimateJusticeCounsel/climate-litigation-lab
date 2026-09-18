@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { eventData } from '@/lib/event-data'
 import {
   ArrowUpRight,
   Compass,
@@ -19,7 +18,9 @@ function PlainButton({ children, onClick, label }: { children: React.ReactNode; 
   return <button type="button" onClick={onClick} aria-label={label} className="inline-flex items-center justify-center border border-transparent px-3 py-2 text-sm transition-colors hover:bg-foreground/5">{children}</button>
 }
 
-export function ClimateLabHome() {
+type HomeEvent = { slug: string; number: string; date: string; location: string; title: string; description: string; tag: string }
+
+export function ClimateLabHome({ events }: { events: HomeEvent[] }) {
   const [searchOpen, setSearchOpen] = useState(false)
 
   return (
@@ -33,7 +34,7 @@ export function ClimateLabHome() {
           <nav className="hidden items-center gap-8 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground md:flex">
             <a href="#events" className="transition-colors hover:text-foreground">Events</a>
             <Link href="/evidence" className="transition-colors hover:text-foreground">Evidence Workspace</Link>
-            <a href="#workspace" className="transition-colors hover:text-foreground">News</a>
+            <Link href="/news" className="transition-colors hover:text-foreground">News</Link>
             <button onClick={() => setSearchOpen(true)} className="inline-flex items-center gap-2 transition-colors hover:text-foreground" aria-label="Open site search">
               <Search className="size-3.5" /> Search
             </button>
@@ -72,7 +73,7 @@ export function ClimateLabHome() {
           <p className="max-w-xs text-sm leading-6 text-muted-foreground">Conversations that bring the law into contact with the lived realities of climate change.</p>
         </div>
         <div className="grid gap-5 lg:grid-cols-2">
-          {eventData.map((event) => <EventCard key={event.slug} event={event} />)}
+          {events.map((event) => <EventCard key={event.slug} event={event} />)}
         </div>
       </section>
 
@@ -102,7 +103,7 @@ export function ClimateLabHome() {
             </div>
           </Link>
 
-          <div className="flex min-h-[360px] flex-col justify-between border border-border p-7 lg:p-10">
+          <Link href="/news" className="group flex min-h-[360px] flex-col justify-between border border-border p-7 transition-colors hover:border-primary hover:bg-secondary/40 lg:p-10">
             <div>
               <span className="text-[10px] uppercase tracking-[0.18em] text-primary">02 · In development</span>
               <Newspaper className="mt-12 size-8 text-primary" strokeWidth={1.25} />
@@ -110,9 +111,9 @@ export function ClimateLabHome() {
             <div className="mt-14">
               <h3 className="font-serif text-4xl tracking-[-0.03em] md:text-5xl">News</h3>
               <p className="mt-5 max-w-xl text-sm leading-7 text-muted-foreground">Recent climate cases and legal developments, with concise summaries and Climate Justice Counsel's analysis of what they mean. Rather than duplicating a case database, each entry will add our perspective on the reasoning, implications, and questions the development raises.</p>
-              <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Case notes · Analysis · Opinion</span>
+              <span className="mt-8 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">Explore News & Analysis <ArrowUpRight className="size-3.5" /></span>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -125,6 +126,6 @@ export function ClimateLabHome() {
   )
 }
 
-function EventCard({ event }: { event: (typeof eventData)[number] }) {
+function EventCard({ event }: { event: HomeEvent }) {
   return <Link href={`/events/${event.slug}`} className="group block border border-border p-7 transition-colors hover:border-primary hover:bg-secondary/40"><div className="flex items-start justify-between"><span className="text-[10px] uppercase tracking-[0.2em] text-primary">{event.number} · {event.tag}</span><ArrowUpRight className="size-5 text-muted-foreground transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary" /></div><div className="mt-20 grid gap-8 md:grid-cols-[0.35fr_1fr]"><div><p className="font-serif text-2xl">{event.date}</p><p className="mt-2 text-xs leading-5 text-muted-foreground">{event.location}</p></div><div><h3 className="max-w-xl font-serif text-3xl leading-tight md:text-4xl">{event.title}</h3><p className="mt-5 max-w-lg text-sm leading-6 text-muted-foreground">{event.description}</p><span className="mt-7 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-primary">View event <ArrowUpRight className="size-3.5" /></span></div></div></Link>
 }

@@ -11,7 +11,18 @@ export default defineConfig({
   basePath: '/studio',
   projectId,
   dataset,
-  plugins: [structureTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Publishing desk')
+          .items([
+            S.documentTypeListItem('newsArticle').title('News & Analysis'),
+            S.documentTypeListItem('event').title('Events'),
+            S.documentTypeListItem('speaker').title('Speakers'),
+          ]),
+    }),
+  ],
   schema: {
     types: schemaTypes,
   },

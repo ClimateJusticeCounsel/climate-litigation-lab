@@ -24,6 +24,16 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+## Publishing with Sanity
+
+The Lab uses Sanity as its public editorial publishing desk. Open `/studio` on the deployed site and sign in to the Sanity project to manage:
+
+- **News & Analysis** — case notes, analysis, viewpoints, case dossiers, and source links.
+- **Events** — event details, programmes, speakers, resources, and interactive-presentation status.
+- **Speakers** — reusable speaker profiles.
+
+Only published Sanity documents are shown on the public site. Private litigation evidence should not be stored in this publishing dataset; the Evidence Workspace remains a separate system.
+
 ## License
 
 The software in this repository is licensed under the [MIT License](./LICENSE).

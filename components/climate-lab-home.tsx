@@ -105,7 +105,7 @@ export function ClimateLabHome({ events }: { events: HomeEvent[] }) {
 
           <Link href="/news" className="group flex min-h-[360px] flex-col justify-between border border-border p-7 transition-colors hover:border-primary hover:bg-secondary/40 lg:p-10">
             <div>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-primary">02 · In development</span>
+              <span className="text-[10px] uppercase tracking-[0.18em] text-primary">02 · Publishing live</span>
               <Newspaper className="mt-12 size-8 text-primary" strokeWidth={1.25} />
             </div>
             <div className="mt-14">
